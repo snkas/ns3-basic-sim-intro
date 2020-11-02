@@ -1,4 +1,4 @@
-# Chapter 5: ns-3 tutorial
+# Chapter 5: First ns-3 tutorial
 
 Ns-3 provides a tutorial as well in which it explains in more detail
 the concepts described before. Please go over the tutorial there:

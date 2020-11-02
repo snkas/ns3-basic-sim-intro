@@ -11,7 +11,7 @@ This exercise is separated into eleven chapters:
 * [Chapter 2: What is discrete-event simulation?](chapters/2_discrete_event_simulation.md)
 * [Chapter 3: Ns-3 basics](chapters/3_ns3_basics.md)
 * [Chapter 4: Building ns-3](chapters/4_ns3_building.md)
-* [Chapter 5: Tutorials](chapters/5_ns3_tutorial.md)
+* [Chapter 5: First ns-3 tutorial](chapters/5_ns3_tutorial.md)
 * [Chapter 6: Adding your own ns-3 module](chapters/6_ns3_adding_your_own_module.md)
 * [Chapter 7: Writing a manual script](chapters/7_ns3_script_manually.md)
 * [Chapter 8: Introducing basic-sim](chapters/8_ns3_introducing_basic_sim.md)
