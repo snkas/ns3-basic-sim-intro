@@ -4,13 +4,13 @@ Ns-3 is a **discrete-event** network **simulator**.
 This concept of discrete-event simulation can be condensed to a small piece of pseudo-code:
 
 ```
-event_queue Q  // Contains events ordered by time, each event has (time T, action A)
+event_queue Q  // Contains events ordered by time, each event has (time T, function to execute (with parameters))
 insert_first_events(Q)
 current_time = 0
 while (Q.not_empty()) {
     next_event = Q.pop()  // Front = the event with the lowest time T
     current_time = next_event.T
-    next_event.execute()  // Can insert future events into Q and modify state
+    next_event.execute()  // Function can insert future events into Q and modify state
 }
 ```
 
