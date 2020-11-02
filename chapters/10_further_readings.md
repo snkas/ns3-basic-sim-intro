@@ -22,4 +22,4 @@
 
 ## Next chapter
 
-[Continue to chapter 11: Test your knowledge](11_test_your_knowledge.md)
+[&#187; Continue to chapter 11: Test your knowledge](11_test_your_knowledge.md)

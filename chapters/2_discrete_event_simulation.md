@@ -90,4 +90,4 @@ while (Q.not_empty()) {
 
 ## Next chapter
 
-[Continue to chapter 3: Ns-3 basics](3_ns3_basics.md)
+[&#187; Continue to chapter 3: Ns-3 basics](3_ns3_basics.md)

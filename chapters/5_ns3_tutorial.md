@@ -50,4 +50,4 @@ Below is a short summary of the steps:
 
 ## Next chapter
 
-[Continue to chapter 6: Adding your own ns-3 module](6_ns3_adding_your_own_module.md)
+[&#187; Continue to chapter 6: Adding your own ns-3 module](6_ns3_adding_your_own_module.md)

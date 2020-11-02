@@ -103,4 +103,4 @@ ns-3 tutorial with our own application.
 
 ## Next chapter
 
-[Continue to chapter 8: Introducing basic-sim](8_ns3_introducing_basic_sim.md)
+[&#187; Continue to chapter 8: Introducing basic-sim](8_ns3_introducing_basic_sim.md)

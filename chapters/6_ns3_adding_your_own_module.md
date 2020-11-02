@@ -438,4 +438,4 @@ in the `scratch/` folder. Now, we are going to create a proper module instead.
 
 ## Next chapter
 
-[Continue to chapter 7: Writing a manual script](7_ns3_script_manually.md)
+[&#187; Continue to chapter 7: Writing a manual script](7_ns3_script_manually.md)

@@ -122,4 +122,4 @@ The following folders in `simulator/` are (for now) not interesting:
 
 ## Next chapter
 
-[Continue to chapter 5: Tutorials](5_ns3_tutorial.md)
+[&#187; Continue to chapter 5: ns-3 tutorial](5_ns3_tutorial.md)

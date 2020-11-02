@@ -33,4 +33,4 @@ a heuristic TCP optimizer, and a few handy applications (TCP flows, UDP bursts, 
    
 ## Next chapter
 
-[Continue to chapter 9: Writing a script with basic-sim](9_ns3_script_with_basic_sim.md)
+[&#187; Continue to chapter 9: Writing a script with basic-sim](9_ns3_script_with_basic_sim.md)

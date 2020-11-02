@@ -55,4 +55,4 @@ Ns-3 is a discrete-event network simulator.
 
 ## Next chapter
 
-[Continue to chapter 2: What is discrete-event simulation?](2_discrete_event_simulation.md)
+[&#187; Continue to chapter 2: What is discrete-event simulation?](2_discrete_event_simulation.md)

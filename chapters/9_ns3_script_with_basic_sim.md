@@ -138,4 +138,4 @@ https://github.com/snkas/basic-sim/blob/master/doc/getting_started.md
 
 ## Next chapter
 
-[Continue to chapter 10: Further readings and test](10_further_readings.md)
+[&#187; Continue to chapter 10: Further readings](10_further_readings.md)

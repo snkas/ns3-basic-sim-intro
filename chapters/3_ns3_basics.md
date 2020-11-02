@@ -115,4 +115,4 @@ Notes:
 
 ## Next chapter
 
-[Continue to chapter 4: Building ns-3](4_ns3_building.md)
+[&#187; Continue to chapter 4: Building ns-3](4_ns3_building.md)
