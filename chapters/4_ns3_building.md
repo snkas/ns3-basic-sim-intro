@@ -27,10 +27,10 @@ ns-3, as the Python bindings are just a wrapper around that.
 
 ## Building
 
-1. Go to the `basic-sim-exercise` folder:
+1. Go to the `ns3-basic-sim-intro` folder:
 
    ```
-   cd /path/to/basic-sim-exercise
+   cd /path/to/ns3-basic-sim-intro
    ```
    
 2. Extract ns-3.31.zip into a folder named `ns-3/`:

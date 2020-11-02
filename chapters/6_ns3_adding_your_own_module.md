@@ -8,7 +8,7 @@ in the `scratch/` folder. Now, we are going to create a proper module instead.
 1. Go to the `ns-3` folder:
 
    ```
-   cd /path/to/basic-sim-exercise/ns-3
+   cd /path/to/ns3-basic-sim-intro/ns-3
    ```
    
 2. Create your own module `contrib/simple-application` by executing:
