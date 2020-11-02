@@ -1,5 +1,7 @@
 # Introduction to ns-3 and the `basic-sim` module
 
+[![Build Status](https://travis-ci.com/snkas/ns3-basic-sim-intro.svg?branch=master)](https://travis-ci.com/snkas/ns3-basic-sim-intro)
+
 Network simulator version 3 (ns-3, for short) is a discrete-event network simulator.
 It is a key part of the computer network researcher's "toolbox". In essence, you
 implement a stripped down implementation of the system, which does not run in real-time
