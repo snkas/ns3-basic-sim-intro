@@ -62,7 +62,11 @@ while (Q.not_empty()) {
    (T=156.2+1.2+223 064.3ms, nodes[113].Receive(P)).
 
 8. Besides events, of course there can also be state changed in an event's execution,
-   which is used and updated as events are executed over time.
+   which is used and changed by events which are executed over time. 
+   "State" effectively means "variables which exist during the simulation".
+   For example: a counter on a node which counts how many
+   packets it has forwarded, or a queue of packets of which each is waiting for the
+   event which dequeues it.
 
 
 ## Practical considerations
