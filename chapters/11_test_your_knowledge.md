@@ -15,7 +15,7 @@ The following things you should be aware of:
 - The default TCP settings are very limited, for example: initial congestion window 
   size is 1 packet, clock granularity is 1ms, maximum send/receive buffer size is 128 KiB, 
   segment size is 500 byte, and minimum RTO is 1s. (in `basic-sim` there is a class
-  called `TcpOptimizer` which tunes these better)
+  called `TcpOptimizer` which tunes these)
   
 - There are TWO queues for each interface: the traffic-control qdisc and the net-device internal queue.
   If there is a traffic-control qdisc, the `NetDevice` internal queue will never drop a packet -- the qdisc
