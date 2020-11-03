@@ -5,16 +5,29 @@
   
   https://www.nsnam.org/doxygen
   
-- The full ns-3 tutorial:
-
+  ns-3 also maintains a list of articles and tutorials to understand the framework better:
+  
+  https://www.nsnam.org/docs/models/html/index.html
   https://www.nsnam.org/docs/tutorial/html/index.html
+  
+  From these, the following are good starting points:
+  
+  - The full ns-3 tutorial: https://www.nsnam.org/docs/tutorial/html/index.html
+  - Point-to-point: https://www.nsnam.org/docs/models/html/point-to-point.html
+  - Queue disciplines: https://www.nsnam.org/docs/models/html/queue-discs.html
+  - Internet: https://www.nsnam.org/docs/models/html/internet-models.html
+  - Traffic-control layer: https://www.nsnam.org/docs/models/html/traffic-control.html
+  - Network module: https://www.nsnam.org/docs/models/html/network.html
+  - Distributed: https://www.nsnam.org/docs/models/html/distributed.html
+  - Making the nodes move (mobility): https://www.nsnam.org/docs/models/html/mobility.html
+  - Using ns-3 for emulation instead of simulation: https://www.nsnam.org/docs/models/html/emulation-overview.html
 
-- For experiment design and evaluation:
+- Good book for experiment design and evaluation:
 
   The Art of Computer Systems Performance Analysis: Techniques for Experimental Design, Measurement, Simulation, and Modeling
   by Raj Jain
 
-- To gain a deeper understanding of (distributed) discrete event simulation:
+- Good book to gain a deeper understanding of (distributed) discrete event simulation:
 
   Parallel and Distributed Simulation Systems
   by Richard M. Fujimoto
