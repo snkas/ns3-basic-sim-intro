@@ -38,15 +38,15 @@ while (Q.not_empty()) {
    2. At t=100ms, nodes[8].Receive(P): Node 8 wants to send it to node 3.
       It calculates how long it would take to transmit packet P: `1500 byte / 10 Mbit/s = 1.2ms`.
       Node 3 is nearby with a propagation delay of 5ms.
-      It inserts into Q event (T=100+1.2+5ms, nodes[3].Receive(P))
+      It inserts into Q event (T=100+1.2+5ms, nodes[3].Receive(P)).
      
    3. At t=106.2ms, nodes[3].Receive(P): Node 3 wants to send it to node 113.
       It calculates how long it would take: `1500 byte / 10 Mbit/s = 1.2ms`.
       However, node 113 is located on Mars in the simulation. The propagation delay is 
-       66.873 million km / c = 223 064.3ms`. It inserts into Q event
-      (T=106.2+1.2+223 064.3ms, nodes[113].Receive(P)).
+      `66.873 million km / c = 223064.3ms`. It inserts into Q event
+      (T=106.2+1.2+223064.3ms, nodes[113].Receive(P)).
      
-   4. At t=223171.7ms, nodes[113].Receive(P): Node 113 is happy to receive packet P
+   4. At t=223171.7ms, nodes[113].Receive(P): Node 113 is happy to receive packet P.
   
 6. The above example simulated 223171.7ms simulation time. However, in wall-clock time (real time)
    executing this will literally have taken less than a 1ms.
@@ -59,7 +59,7 @@ while (Q.not_empty()) {
    yet no simulation time will pass. For example, in (iii) nodes[3].Receive(P), we could also
    perform a very difficult calculation involving relativity and whatnot, which might
    take 200 hours (= 7.2e+8ms) to compute the more accurately modelled propagation delay.
-   If we want this difficultly simulated to take time, we can do this.
+   If we want this difficulty simulated to take time, we can do this.
    For instance, let's say 50ms in our simulation we want it take.
    After calculating the propagation delay we insert an event (T=106.2ms + 50ms,
    ComputePropagationFinished()) which in its execution inserts into Q event 
@@ -118,7 +118,7 @@ while (Q.not_empty()) {
     with some loss of model accuracy, you can group them. You do this by maintaining a list of
     the things that happened in that time interval, and then having a regenerative event
     in a time interval (e.g., 10ms) which goes over the list. It's like the efficiency
-    of garbage collection in Java. 
+    of garbage collection in Java (process in batches).
     
   * **If you can, leave it to post-processing**
   
