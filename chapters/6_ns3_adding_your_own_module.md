@@ -2,6 +2,10 @@
 
 In the previous chapter you became accustomed to creating main files
 in the `scratch/` folder. Now, we are going to create a proper module instead.
+This module defines a very simple application, which binds itself on a UDP port,
+and then sends one packet to a destination IP address (+ UDP port). It writes
+to the console when it sends its one packet out, and whenever it receives a packet.
+
 
 ## Creating the module
 
