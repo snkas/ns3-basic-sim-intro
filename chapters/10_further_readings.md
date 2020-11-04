@@ -22,6 +22,9 @@
   - Making the nodes move (mobility): https://www.nsnam.org/docs/models/html/mobility.html
   - Using ns-3 for emulation instead of simulation: https://www.nsnam.org/docs/models/html/emulation-overview.html
 
+- The Dagstuhl Beginners Guide to Reproducibility for Experimental Networking Research:
+  https://arxiv.org/abs/1902.02165
+
 - Good book for experiment design and evaluation:
 
   The Art of Computer Systems Performance Analysis: Techniques for Experimental Design, Measurement, Simulation, and Modeling
