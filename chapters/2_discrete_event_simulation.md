@@ -138,6 +138,17 @@ while (Q.not_empty()) {
     division of `int a = 10 / 100;` rounds to `a=0`. Discrete event simulation also happens
     at fixed time granularity, so even if you set an event to 0.3 nanoseconds in the future,
     if the granularity is 1 nanosecond, the event will either be 0 or 1ns in the future.
+    
+* **Pre-process/pre-calculate as much as possible**
+
+  If you have values which you can calculate beforehand which remain the same for each
+  experimental run, it might be worthwhile to pre-calculate these, and then read in the
+  pre-calculated values from file at the start of each ns-3 run. Depending on the task, the
+  pre-calculation you might want to do on many machines or in a more convenient 
+  programming language other than C++ (with e.g., better libraries available).
+  
+  For example: if you have a 20000-node network, pre-calculating and saving routing
+  state in file might save you a lot of time each run. 
 
 
 ## Next chapter
