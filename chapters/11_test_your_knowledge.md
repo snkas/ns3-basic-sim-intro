@@ -51,8 +51,10 @@ The following things you should be aware of:
 2. Two. One in the outgoing traffic-control layer, and one in the outgoing net-device.
    There are no 
 
-3. FQ-CoDel, tuned with default parameters suitable for 50ms+ RTTs, like
-   in the Internet.
+3. Ns-3 aims to follow both RFCs and the current design decisions of Linux.
+   Like Linux, the default queueing discipline for Internet stack is set to FqCoDel, 
+   with its default parameters tuned to the Internet (50ms+ RTTs). Especially in the 
+   data center context this can lead to excessive initial queueing for a flow.
    
 4. First-in-first-out (drop-tail).
 

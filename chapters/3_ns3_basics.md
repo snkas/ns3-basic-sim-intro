@@ -66,18 +66,43 @@ pass it to a `NetDevice` instead they give it to the `TrafficControlLayer`, whic
 a queue discipline (a more general version of a queue) for each interface. The word interface
 corresponds in general to a single `NetDevice`. After passing through the queue (discipline)
 in the `TrafficControlLayer` it is actually passed to the `NetDevice`. A `NetDevice` itself
-also has an internal queue. As such:
+also has an internal queue.
+ 
+**Why is there a traffic control layer (/ queueing disciplines)?**
 
-**There are two queues before a Packet is sent out by the `NetDevice`: (1) the queue (discipline)
-of the `TrafficControlLayer` for that interface/`NetDevice`, and (2) the `NetDevice`'s own internal
-queue implementation**
+At first glance, the traffic control layer seems to significantly complicate a single queue.
+The answer lies in the separation of concerns: the traffic-control layer takes care of
+"user-space" (i.e., applications/flows using the network) and the net-device takes care of
+actually transmitting (i.e., packets). In ns-3 everything is C++ code, and can be edited easily,
+as such beyond the "principle" the distinction of these concerns is arbitrary.
+However, in reality net-devices (i.e., network cards) are made up of ASICs with baked-in
+queue logic. As such, supporting all desirable configurable queue logic is very difficult, and it is
+"not its problem" (of course, traffic-control layer can make use of net-devices' 
+built-in queues to be more efficient, like a hardware accelerator).
 
-The `TrafficControlLayer` queueing discipline asks the `NetDevice` queue gets notified if there
-is space to accept a Packet. It does not pass a Packet if there is no space. The only drops
-occur at the `TrafficControlLayer` queueing discipline for that interface.
+As mentioned, the traffic-control layer arbitrates user-space needs. This is needed to guarantee
+good quality of experience for all applications: some of them want low latency (e.g.,
+not get queued behind large flows) and some of them want a lot of bandwidth.
+As an extreme example of why you need arbitration: 
+one application blasting UDP at 10 Gbit/s without congestion control to your net-device
+should (in most use cases) not make the net-device unusable for other applications.
 
-**If there is a traffic-control queueing discipline for the `NetDevice` (interface),
-the `NetDevice`'s internal queue will never drop a `Packet`!**
+You might want to install different traffic-control on different nodes. E.g., if a Node
+is meant to be a Linux endpoint machine in an Internet setting, FqCoDel might be good.
+For things that represent switches, it might be that the type of switch you want to
+simulate does not have FqCoDel (which is most of them) supported and instead you want to
+do first-in-first-out (FIFO) or priority queuing.
+
+**Key takeaways:**
+
+1. There are TWO queues before a Packet is sent out by the `NetDevice`: (1) the queue (discipline)
+   of the `TrafficControlLayer` for that interface/`NetDevice`, and (2) the `NetDevice`'s own internal
+   queue implementation.
+
+2. The `TrafficControlLayer` queueing discipline asks the `NetDevice` queue gets notified if there
+   is space to accept a Packet. It does not pass a Packet if there is no space. The only drops
+   occur at the `TrafficControlLayer` queueing discipline for that interface. If there is a traffic-control queueing discipline for the `NetDevice` (interface),
+   the `NetDevice`'s internal queue will never drop a `Packet`!
 
 
 ## Medium between `Node`s: `Channel`
