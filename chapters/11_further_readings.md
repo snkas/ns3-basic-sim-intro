@@ -52,7 +52,8 @@ From these, the following are good starting points:
 
 ## General computer networks
 
-- For general introduction computer network concepts (Bachelor level), the open-source book:
+- For a general introduction to computer network concepts (Bachelor level), 
+  the following open-source book is quite useful:
   An Introduction to Computer Networks by Peter L Dordal.
   http://intronetworks.cs.luc.edu/current/html/index.html
 
