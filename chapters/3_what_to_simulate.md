@@ -1,7 +1,7 @@
 # Chapter 3: What are we going to simulate?
 
 Candidly speaking, like any discrete-event simulator, ns-3 is essentially the
-8 lines of pseudo-code of chapter 2, written in C++ with the state consisting
+9 lines of pseudo-code of chapter 2, written in C++ with the state consisting
 of network concepts and the events being thus network-related. Before we get into
 ns-3 itself, we will take a step back and investigate **what** we want to simulate.
 

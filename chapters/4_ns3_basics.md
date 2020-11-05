@@ -3,7 +3,7 @@
 ns-3 is a discrete-event **network** simulator. In this chapter we discuss
 the absolute basics of ns-3.
 
-To emphasize again: ns-3 is essentially the 8 lines of pseudo-code of chapter 2,
+To emphasize again: ns-3 is essentially the 9 lines of pseudo-code of chapter 2,
 written in C++, with a whole lot of helpers around it to aid abstraction. 
 
 - **The state** consists of network concepts, such as queues, TCP state, counters,
