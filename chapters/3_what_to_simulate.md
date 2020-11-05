@@ -64,11 +64,21 @@ This is needed to guarantee good quality of experience for all applications:
   should (in most use cases) not make the net-device unusable for other applications.
 
 Queueing disciplines as such need to distinguish between packets. There are
-essentially two ways this is done (which are not mutually exclusive!):
+essentially two ways this is done:
 
 * Make use of the concept of "flow" instead of treating packets solely individually.
   A flow is often defined by the 5-tuple (protocol, IP src/dst, port src/dst).
+  Each flow gets its own queue.
+  
 * Allow applications to set a QoS field (e.g., the DSCP field in the IP header).
+  Each priority level has its own queue.
+  
+These two ways are not mutually exclusive and can be combined as well.
+
+The queueing discipline scheduler decides from which queue it should take packets
+based on its policy. It can e.g., be just round-robin, weighted round-robin with 
+some queue priority, absolute priority (only if all higher priority queue are empty),
+or any other strategy you can think of.
 
 Examples queueing disciplines are:
 
