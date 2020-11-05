@@ -50,6 +50,12 @@ From these, the following are good starting points:
   https://blog.packagecloud.io/eng/2016/06/22/monitoring-tuning-linux-networking-stack-receiving-data/
 
 
+## General computer networks
+
+- For general introduction computer network concepts (Bachelor level), the open-source book:
+  An Introduction to Computer Networks by Peter L Dordal.
+  http://intronetworks.cs.luc.edu/current/html/index.html
+
 ## Navigation
 
 **Continue to the next chapter:**
