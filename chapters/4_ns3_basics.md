@@ -1,22 +1,28 @@
-# Chapter 3: Ns-3 basics
+# Chapter 4: Ns-3 basics
 
 ns-3 is a discrete-event **network** simulator. In this chapter we discuss
 the absolute basics of ns-3.
 
-Bluntly speaking, ns-3 is nothing but the 8 lines of pseudo-code of chapter 2
-written in C++ with a bunch of network concepts around it. The state we kept
-referring to is the network in ns-3. Events in ns-3 are aimed to manipulate
-what is passed around in networks: packets, it thus also often referred to
-as "packet-level simulation". Some event examples to give you a feel for it:
-packets arriving, packets getting queued/dequeued, TCP timeouts expiring to
-send out a packet, etc..
+To emphasize again: ns-3 is essentially the 8 lines of pseudo-code of chapter 2,
+written in C++, with a whole lot of helpers around it to aid abstraction. 
+
+- **The state** consists of network concepts, such as queues, TCP state, counters,
+  or forwarding state.
+  
+- **The events** are about those network concepts. Most of these events are
+  about packets arriving or being sent, (e.g., transmission of a
+  packet causing dequeueing, sending or receiving of packets by TCP, TCP timeouts),
+  however it can be anything related to the network that you want to model:
+  changes to the links (e.g., going down, changing bandwidth), forwarding
+  state updates, etc..
 
 
-## `Node` is the core concept
+## `Node` is the core state concept
 
 In ns-3, the network is a collection of `Node`s. The `Node` is the core concept of ns-3.
 Everything is attached to a `Node`, or attached to things attached to a `Node`.
 Think of it as a node in a graph, except there are no edges explicitly defined.
+The `Node`s and what is attached to it is the state.
 
 A `Node` has the following state:
 
@@ -24,6 +30,7 @@ A `Node` has the following state:
 
   A `NetDevice` you can think of as physical network port on a computer. This can be
   a thing in which you plug a cable, or which uses radio frequencies to communicate.
+  It encompasses the driver queue and the NIC in the Linux networking stack.
   A node communicates to other nodes exclusively through its `NetDevice`s by handing
   `Packet`s to it or receiving `Packet`s from it.
 
@@ -61,37 +68,29 @@ A `Node` has the following state:
 
 ## Traffic-control
 
-The Internet stack Protocols when they want to send a packet out, they do not directly
-pass it to a `NetDevice` instead they give it to the `TrafficControlLayer`, which maintains
-a queue discipline (a more general version of a queue) for each interface. The word interface
-corresponds in general to a single `NetDevice`. After passing through the queue (discipline)
-in the `TrafficControlLayer` it is actually passed to the `NetDevice`. A `NetDevice` itself
+The Internet stack maintains an interface for each `NetDevice`.
+The Internet stack Protocols do not directly pass outgoing packets to its respective `NetDevice`.
+Instead they give it to the `TrafficControlLayer`, which maintains
+a queueing discipline (a more general version of a queue) for each interface.
+After passing through the queue (discipline) in the `TrafficControlLayer`
+it is actually passed to the `NetDevice`. A `NetDevice` itself
 also has an internal queue.
  
-**Why is there a traffic control layer (/ queueing disciplines)?**
-
-At first glance, the traffic control layer seems to significantly complicate a single queue.
-The answer lies in the separation of concerns: the traffic-control layer takes care of
-"user-space" (i.e., applications/flows using the network) and the net-device takes care of
-actually transmitting (i.e., packets). In ns-3 everything is C++ code, and can be edited easily,
-as such beyond the "principle" the distinction of these concerns is arbitrary.
-However, in reality net-devices (i.e., network cards) are made up of ASICs with baked-in
-queue logic. As such, supporting all desirable configurable queue logic is very difficult, and it is
-"not its problem" (of course, traffic-control layer can make use of net-devices' 
-built-in queues to be more efficient, like a hardware accelerator).
-
-As mentioned, the traffic-control layer arbitrates user-space needs. This is needed to guarantee
-good quality of experience for all applications: some of them want low latency (e.g.,
-not get queued behind large flows) and some of them want a lot of bandwidth.
-As an extreme example of why you need arbitration: 
-one application blasting UDP at 10 Gbit/s without congestion control to your net-device
-should (in most use cases) not make the net-device unusable for other applications.
+In ns-3 is simulation and consists only of C++ code, which can be edited easily.
+As such, from a simulation standpoint, it seems like the distinction between
+queueing discipline and net-device internal queue are rather arbitrary.
+In the previous version, ns-2, these were actually combined together!
+However, separating them is more accurate with the real-world which
+we are modeling (see previous chapter). Secondly, it is a good software engineering
+practice (i.e., decouple functionality) to have more maintainable code.
+It is thus important to keep this distinction!
 
 You might want to install different traffic-control on different nodes. E.g., if a Node
 is meant to be a Linux endpoint machine in an Internet setting, FqCoDel might be good.
 For things that represent switches, it might be that the type of switch you want to
 simulate does not have FqCoDel (which is most of them) supported and instead you want to
-do first-in-first-out (FIFO) or priority queuing.
+do first-in-first-out (FIFO) or priority queuing (PFifoFast). You can even disable
+the traffic-control layer is not present on the switch you want to model.
 
 **Key takeaways:**
 
@@ -138,6 +137,23 @@ Notes:
 * There is only an egress queue in the `PointToPointNetDevice`
 
 
-## Next chapter
+## Navigation
 
-[&#187; Continue to chapter 4: Building ns-3](4_ns3_building.md)
+**Continue to the next chapter:**
+
+[&#187; Chapter 5: Building ns-3](5_ns3_building.md)
+
+**Full menu:**
+
+* [Chapter 1: The toolbox](1_toolbox.md)
+* [Chapter 2: What is discrete-event simulation?](2_discrete_event_simulation.md)
+* [Chapter 3: What are we going to simulate?](3_what_to_simulate.md)
+* [Chapter 4: Ns-3 basics](4_ns3_basics.md)
+* [Chapter 5: Building ns-3](5_ns3_building.md)
+* [Chapter 6: First ns-3 tutorial](6_ns3_tutorial.md)
+* [Chapter 7: Adding your own ns-3 module](7_ns3_adding_your_own_module.md)
+* [Chapter 8: Writing a manual script](8_ns3_script_manually.md)
+* [Chapter 9: Introducing basic-sim](9_ns3_introducing_basic_sim.md)
+* [Chapter 10: Writing a script with basic-sim](10_ns3_script_with_basic_sim.md)
+* [Chapter 11: Further readings](11_further_readings.md)
+* [Chapter 12: Test your knowledge](12_test_your_knowledge.md)

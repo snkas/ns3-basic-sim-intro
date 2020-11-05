@@ -1,4 +1,4 @@
-# Chapter 7: Writing a manual script
+# Chapter 8: Writing a manual script
 
 We are going to replace the application in `myfirst.cc` of the
 ns-3 tutorial with our own application.
@@ -101,6 +101,23 @@ ns-3 tutorial with our own application.
    ```
    
 
-## Next chapter
+## Navigation
 
-[&#187; Continue to chapter 8: Introducing basic-sim](8_ns3_introducing_basic_sim.md)
+**Continue to the next chapter:**
+
+[&#187; Chapter 9: Introducing basic-sim](9_ns3_introducing_basic_sim.md)
+
+**Full menu:**
+
+* [Chapter 1: The toolbox](1_toolbox.md)
+* [Chapter 2: What is discrete-event simulation?](2_discrete_event_simulation.md)
+* [Chapter 3: What are we going to simulate?](3_what_to_simulate.md)
+* [Chapter 4: Ns-3 basics](4_ns3_basics.md)
+* [Chapter 5: Building ns-3](5_ns3_building.md)
+* [Chapter 6: First ns-3 tutorial](6_ns3_tutorial.md)
+* [Chapter 7: Adding your own ns-3 module](7_ns3_adding_your_own_module.md)
+* [Chapter 8: Writing a manual script](8_ns3_script_manually.md)
+* [Chapter 9: Introducing basic-sim](9_ns3_introducing_basic_sim.md)
+* [Chapter 10: Writing a script with basic-sim](10_ns3_script_with_basic_sim.md)
+* [Chapter 11: Further readings](11_further_readings.md)
+* [Chapter 12: Test your knowledge](12_test_your_knowledge.md)
