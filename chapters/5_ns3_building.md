@@ -19,8 +19,7 @@ ns-3, as the Python bindings are just a wrapper around that.
 
    * MPI:
      ```
-     sudo apt-get install mpic++
-     sudo apt-get install libopenmpi-dev
+     sudo apt-get install openmpi-bin openmpi-common openmpi-doc libopenmpi-dev
      ```
    * lcov: `sudo apt-get install lcov`
 

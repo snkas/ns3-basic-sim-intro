@@ -10,8 +10,7 @@ before_install:
   - test -n $CXX && unset CXX
   - pyenv global 3.7
   - sudo apt-get update
-  - sudo apt-get -y install mpic++
-  - sudo apt-get -y install libopenmpi-dev
+  - sudo apt-get -y install openmpi-bin openmpi-common openmpi-doc libopenmpi-dev
   - sudo apt-get -y install lcov
   - sudo apt-get -y install gnuplot
   - pip install numpy
