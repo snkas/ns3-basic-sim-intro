@@ -1,9 +1,9 @@
 # Making the ns-3 folder
 echo "Building base ns-3..."
-unzip -n ns-3.31.zip || exit 1
+unzip -n ns-3.33.zip || exit 1
 mkdir -p ns-3 || exit 1
-scp -r ns-3.31/* ns-3/ || exit 1
-rm -r ns-3.31 || exit 1
+scp -r ns-3.33/* ns-3/ || exit 1
+rm -r ns-3.33 || exit 1
 cd ns-3 || exit 1
 ./waf configure --build-profile=debug --enable-mpi --enable-examples --enable-tests --enable-gcov --out=build/debug_all || exit 1
 ./waf || exit 1

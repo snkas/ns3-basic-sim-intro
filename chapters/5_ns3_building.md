@@ -32,11 +32,11 @@ ns-3, as the Python bindings are just a wrapper around that.
    cd /path/to/ns3-basic-sim-intro
    ```
    
-2. Extract ns-3.31.zip into a folder named `ns-3/`:
+2. Extract ns-3.33.zip into a folder named `ns-3/`:
 
    ```
-   unzip -n ns-3.31.zip
-   mv ns-3.31 ns-3
+   unzip -n ns-3.33.zip
+   mv ns-3.33 ns-3
    ```
    
 3. Enter the `ns-3` folder:
